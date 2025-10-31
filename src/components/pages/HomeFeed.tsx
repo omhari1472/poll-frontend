@@ -31,7 +31,7 @@ export function HomeFeed() {
   useEffect(() => {
     if (isConnected && polls.length > 0) {
       const pollIds = polls.map((poll: Poll) => poll.pollId);
-      const uniquePollIds = Array.from(new Set(pollIds));
+      const uniquePollIds = Array.from(new Set(pollIds)) as string[];
       uniquePollIds.forEach((pollId: string) => {
         joinPoll(pollId);
       });
